@@ -1,0 +1,7 @@
+version: "3.0"
+services:
+  goservice:
+    build: .
+    ports:
+      - "9595:9595"
+

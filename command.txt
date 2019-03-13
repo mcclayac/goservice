@@ -1,0 +1,14 @@
+
+
+
+#  Build the service
+$ docker build . -t goservice:v0.0.1
+
+
+# Run the service
+$ docker run --name goservice -d -p 9595:9595 goservice:v0.0.1
+8552365f740748b1a6ec0f1d587e557d9356253038598a7248aec6fca33b7038
+
+
+# Start the service
+$ docker-compose up -d
