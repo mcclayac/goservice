@@ -2,7 +2,7 @@
 
 
 #  Build the service
-$ docker build . -t goservice:v0.0.1
+$ docker build . -t mcclayac/goservice:v0.0.3
 
 
 # Run the service
@@ -12,3 +12,14 @@ $ docker run --name goservice -d -p 9595:9595 goservice:v0.0.1
 
 # Start the service
 $ docker-compose up -d
+
+
+# build image with version v0.0.3
+$ docker build . -t mcclayac/goservice:v0.0.3
+
+$ docker push mcclayac/goservice:v0.0.3
+
+# for Kubernetes
+$ docker build . -t mcclayac/goservice9090:v0.0.3
+$ docker push mcclayac/goservice9090:v0.0.3
+
