@@ -16,10 +16,26 @@ $ docker-compose up -d
 
 # build image with version v0.0.3
 $ docker build . -t mcclayac/goservice:v0.0.3
+docker build -t goservice:v0.07 .
 
 $ docker push mcclayac/goservice:v0.0.3
 
 # for Kubernetes
-$ docker build . -t mcclayac/goservice9090:v0.0.3
-$ docker push mcclayac/goservice9090:v0.0.3
+$ docker build . -t mcclayac/goservice9090:v0.0.5
+$ docker push mcclayac/goservice9090:v0.0.5
+
+docker image tag 39ada5fb19cf 13.59.217.0:5000/goservice9090:v0.0.6
+
+
+docker image tag 39ada5fb19cf ec2-13-59-217-0.us-east-2.compute.amazonaws.com:5000/goservice9090:v0.0.6
+docker push ec2-13-59-217-0.us-east-2.compute.amazonaws.com:5000/goservice9090:v0.0.6
+
+# Push to ECR
+$ docker build -t goservice .
+$ docker tag goservice:latest 722234550817.dkr.ecr.us-east-2.amazonaws.com/goservice:latest
+$ docker push 722234550817.dkr.ecr.us-east-2.amazonaws.com/goservice:latest
+
+$ docker build -t goservice:v008 .
+$ docker tag goservice:v008 722234550817.dkr.ecr.us-east-2.amazonaws.com/goservice:v008
+$ docker push 722234550817.dkr.ecr.us-east-2.amazonaws.com/goservice:v008
 
